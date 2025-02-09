@@ -3,7 +3,7 @@ import time
 num = 0
 while True:
   num += 1
-  stream = open("test"+str(num)+'.txt', 'wt')
+  stream = open("test"+str(num)+'.txt', 'w')
   listtest = []
   for i in range(random.randint(1,99)):
     var = random.randint(0,9)
@@ -13,6 +13,8 @@ while True:
     stream.writelines(['test','','','test'])
     stream.write('\n')
     stream.writelines(listtest)
+    if stream.readable():
+      stream.read()
     time.sleep(0.1)
     pass
   if num == 10:
