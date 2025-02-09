@@ -25,7 +25,7 @@ class Code():
   def code():
     global a
     global b
-    a = test.input2(a,b)
+    a = test.input(a,b)
     while True:
       try:
         test.var1 = int(input("Num2: "))
