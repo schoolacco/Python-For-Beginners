@@ -14,5 +14,7 @@ while True:
    File.read()
   elif var == "create":
     File.create()
+  elif var == "edit":
+    File.append()
   elif var == "end":
     break

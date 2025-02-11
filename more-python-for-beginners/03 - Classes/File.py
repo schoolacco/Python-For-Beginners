@@ -23,15 +23,18 @@ class File():
         break
     stream.close
   def read():
-    stream = open("demo.txt", "r")
-    if stream.readable():
-      print(stream.read())
-    stream.close
+    try:
+      stream = open(input("File name (do not include suffix): ")+".txt", "r")
+      if stream.readable():
+        print(stream.read())
+      stream.close
+    except:
+      print("File not accessible")
   def create():
     num = 0
     while True:
       try:
-        stream = open("Output"+str(num)+".py", "x")
+        stream = open("Output"+str(num)+input("File suffix: "), "x")
         while True:
          if stream.writable():
           stream.write(input("Test: "))
@@ -44,4 +47,14 @@ class File():
         if num == None:
           num = 0
         num += 1
+  def append():
+    stream = open(input("File name: "), "a")
+    while True:
+     if stream.writable():
+      stream.write(input("Test: "))
+      stream.write("\n")
+     if input("End?: ").lower() == "true":
+      stream.close()
+      break
+ 
   
