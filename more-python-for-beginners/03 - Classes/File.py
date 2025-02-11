@@ -27,4 +27,21 @@ class File():
     if stream.readable():
       print(stream.read())
     stream.close
+  def create():
+    num = 0
+    while True:
+      try:
+        stream = open("Output"+str(num)+".py", "x")
+        while True:
+         if stream.writable():
+          stream.write(input("Test: "))
+          stream.write("\n")
+         if input("End?: ").lower() == "true":
+          stream.close()
+          break
+        break
+      except:
+        if num == None:
+          num = 0
+        num += 1
   
